@@ -46,7 +46,7 @@ No providers.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_result"></a> [result](#output\_result) | Route Target in NX-OS DME format. |
+| <a name="output_result"></a> [result](#output\_result) | List of Route Targets in NX-OS DME format. |
 
 ## Resources
 

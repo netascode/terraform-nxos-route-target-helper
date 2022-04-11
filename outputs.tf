@@ -1,4 +1,4 @@
 output "result" {
   value       = local.result
-  description = "Route Target in NX-OS DME format."
+  description = "List of Route Targets in NX-OS DME format."
 }
