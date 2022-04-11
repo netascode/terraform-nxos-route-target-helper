@@ -22,7 +22,7 @@ module "main" {
   source  = "netascode/route-target-helper/nxos"
   version = ">= 0.0.1"
 
-  value = "65536:1"
+  values = ["auto", "65535:1", "65536:1"]
 }
 ```
 
@@ -40,7 +40,7 @@ No providers.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_value"></a> [value](#input\_value) | Route Target value. | `string` | n/a | yes |
+| <a name="input_values"></a> [values](#input\_values) | List of Route Target values. | `list(string)` | n/a | yes |
 
 ## Outputs
 

@@ -1,9 +1,11 @@
-variable "value" {
-  description = "Route Target value."
-  type        = string
+variable "values" {
+  description = "List of Route Target values."
+  type        = list(string)
 
   validation {
-    condition     = "auto" == var.value || can(regex("\\d+\\.\\d+\\.\\d+\\.\\d+:\\d+", var.value)) || can(regex("\\d+:\\d+", var.value))
+    condition = alltrue([
+      for v in var.values : "auto" == v || can(regex("\\d+\\.\\d+\\.\\d+\\.\\d+:\\d+", v)) || can(regex("\\d+:\\d+", v))
+    ])
     error_message = "Allowed formats: `auto`, `1.1.1.1:1`, `65535:1`."
   }
 }
