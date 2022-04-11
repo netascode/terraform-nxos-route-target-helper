@@ -1,8 +1,6 @@
-module "nxos_scaffolding" {
-  source  = "netascode/scaffolding/nxos"
+module "main" {
+  source  = "netascode/route-target-helper/nxos"
   version = ">= 0.0.1"
 
-  id          = "eth1/10"
-  description = "My Description"
-  mode        = "trunk"
+  value = "65536:1"
 }

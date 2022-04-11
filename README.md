@@ -10,13 +10,11 @@ Model Documentation: [Link](https://developer.cisco.com/docs/cisco-nexus-3000-an
 ## Examples
 
 ```hcl
-module "nxos_scaffolding" {
-  source  = "netascode/scaffolding/nxos"
+module "main" {
+  source  = "netascode/route-target-helper/nxos"
   version = ">= 0.0.1"
 
-  id          = "eth1/10"
-  description = "My Description"
-  mode        = "trunk"
+  value = "65536:1"
 }
 ```
 
@@ -25,32 +23,24 @@ module "nxos_scaffolding" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_nxos"></a> [nxos](#requirement\_nxos) | >= 0.1.0 |
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| <a name="provider_nxos"></a> [nxos](#provider\_nxos) | >= 0.1.0 |
+No providers.
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_id"></a> [id](#input\_id) | Interface ID. Must match first field in the output of `show intf brief`. Example: `eth1/1`. | `string` | n/a | yes |
-| <a name="input_description"></a> [description](#input\_description) | Interface description. | `string` | `""` | no |
-| <a name="input_mode"></a> [mode](#input\_mode) | Interface mode. Choices: `access`, `trunk`, `fex-fabric`, `dot1q-tunnel`, `promiscuous`, `host`, `trunk_secondary`, `trunk_promiscuous`, `vntag`. | `string` | `"access"` | no |
+| <a name="input_value"></a> [value](#input\_value) | Route Target value. | `string` | `null` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_dn"></a> [dn](#output\_dn) | Distinguished name of `l1PhysIf` object. |
-| <a name="output_id"></a> [id](#output\_id) | Interface ID. |
+| <a name="output_result"></a> [result](#output\_result) | Route Target in NX-OS DME format. |
 
 ## Resources
 
-| Name | Type |
-|------|------|
-| [nxos_rest.l1PhysIf](https://registry.terraform.io/providers/netascode/nxos/latest/docs/resources/rest) | resource |
+No resources.
 <!-- END_TF_DOCS -->
