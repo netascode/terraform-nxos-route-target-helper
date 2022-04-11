@@ -3,14 +3,15 @@ version: '>= 0.14.0'
 formatter: markdown table
 
 content: |-
-  [![Tests](https://github.com/netascode/terraform-nxos-scaffolding/actions/workflows/test.yml/badge.svg)](https://github.com/netascode/terraform-nxos-scaffolding/actions/workflows/test.yml)
+  [![Tests](https://github.com/netascode/terraform-nxos-route-target-helper/actions/workflows/test.yml/badge.svg)](https://github.com/netascode/terraform-nxos-route-target-helper/actions/workflows/test.yml)
 
   # Terraform NXOS Route Target helper
 
   Description
   
-  Translates Route Target values from NXOS CLI format to NX-OS DME model format.
+  Translates Route Target values from NXOS CLI format to NX-OS DME model format. This module does not create any resources.
 
+  Translation examples:
   ```
   route-target 65535:1      --> "route-target:as2-nn2:65535:1"
   route-target 65536:1      --> "route-target:as4-nn2:65536:1"

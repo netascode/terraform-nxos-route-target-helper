@@ -21,28 +21,28 @@ module "main" {
 }
 
 resource "test_assertions" "rd_check" {
-  component = "RD"
+  component = "Route target"
 
   equal "test1" {
-    description = "check rd auto"
+    description = "check route-target auto"
     got         = module.main["auto"].result
     want        = local.test_values["auto"]
   }
 
   equal "test2" {
-    description = "check rd 1.1.1.1:1"
+    description = "check route-target 1.1.1.1:1"
     got         = module.main["1.1.1.1:1"].result
     want        = local.test_values["1.1.1.1:1"]
   }
 
   equal "test3" {
-    description = "check rd 65535:1"
+    description = "check route-target 65535:1"
     got         = module.main["65535:1"].result
     want        = local.test_values["65535:1"]
   }
 
   equal "test4" {
-    description = "check rd 65536:1"
+    description = "check route-target 65536:1"
     got         = module.main["65536:1"].result
     want        = local.test_values["65536:1"]
   }

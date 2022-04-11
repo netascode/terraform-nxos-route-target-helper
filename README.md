@@ -1,11 +1,19 @@
 <!-- BEGIN_TF_DOCS -->
-[![Tests](https://github.com/netascode/terraform-nxos-scaffolding/actions/workflows/test.yml/badge.svg)](https://github.com/netascode/terraform-nxos-scaffolding/actions/workflows/test.yml)
+[![Tests](https://github.com/netascode/terraform-nxos-route-target-helper/actions/workflows/test.yml/badge.svg)](https://github.com/netascode/terraform-nxos-route-target-helper/actions/workflows/test.yml)
 
-# Terraform NXOS Scaffolding Module
+# Terraform NXOS Route Target helper
 
 Description
 
-Model Documentation: [Link](https://developer.cisco.com/docs/cisco-nexus-3000-and-9000-series-nx-api-rest-sdk-user-guide-and-api-reference-release-9-3x/#!configuring-an-ethernet-interface)
+Translates Route Target values from NXOS CLI format to NX-OS DME model format. This module does not create any resources.
+
+Translation examples:
+```
+route-target 65535:1      --> "route-target:as2-nn2:65535:1"
+route-target 65536:1      --> "route-target:as4-nn2:65536:1"
+route-target 1.1.1.1:1    --> "route-target:ipv4-nn2:1.1.1.1:1"
+route-target auto         --> "route-target:unknown:0:0"
+```
 
 ## Examples
 
@@ -32,7 +40,7 @@ No providers.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_value"></a> [value](#input\_value) | Route Target value. | `string` | `null` | no |
+| <a name="input_value"></a> [value](#input\_value) | Route Target value. | `string` | n/a | yes |
 
 ## Outputs
 

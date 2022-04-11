@@ -9,7 +9,7 @@ $ terraform plan
 $ terraform apply
 ```
 
-Note that this example will create resources. Resources can be destroyed with `terraform destroy`.
+This example does not create any resources.
 
 ```hcl
 module "main" {
