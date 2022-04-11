@@ -21,7 +21,7 @@ module "main" {
 }
 
 resource "test_assertions" "rd_check" {
-  component = "Route target"
+  component = "Route-target"
 
   equal "test1" {
     description = "check route-target auto"
