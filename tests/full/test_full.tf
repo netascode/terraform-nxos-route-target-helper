@@ -18,7 +18,6 @@ locals {
 
 module "main" {
   source = "../.."
-  # for_each = local.test_values
   values = local.test
 }
 
@@ -30,22 +29,4 @@ resource "test_assertions" "rd_check" {
     got         = module.main.result
     want        = local.want
   }
-
-  # equal "test2" {
-  #   description = "check route-target 1.1.1.1:1"
-  #   got         = module.main["1.1.1.1:1"].result
-  #   want        = local.test_values["1.1.1.1:1"]
-  # }
-
-  # equal "test3" {
-  #   description = "check route-target 65535:1"
-  #   got         = module.main["65535:1"].result
-  #   want        = local.test_values["65535:1"]
-  # }
-
-  # equal "test4" {
-  #   description = "check route-target 65536:1"
-  #   got         = module.main["65536:1"].result
-  #   want        = local.test_values["65536:1"]
-  # }
 }
